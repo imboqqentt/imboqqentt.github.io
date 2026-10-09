@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="Daniel Hormazábal · Páginas Web">
+<meta property="og:description" content="Páginas web simples y rápidas para negocios de Curicó. Precio fijo, lista en una semana.">
+<meta property="og:type" content="website">
+<style>body{margin:0}</style>
+<title>Daniel Hormazábal · Páginas Web</title>
+<meta name="description" content="Páginas web para negocios de Curicó.">
+<style>
+/* Layout: página de producto. Una idea por sección, titulares centrados, bloques claros y oscuros alternados, el celular como imagen principal */
+:root{
+  --white:#ffffff; --light:#f5f5f7; --dark:#000000; --dark-2:#1d1d1f;
+  --ink:#1d1d1f; --ink-soft:#6e6e73; --ink-inv:#f5f5f7; --soft-inv:#a1a1a6;
+  --blue:#0071e3; --blue-inv:#2997ff; --green:#25d366; --wheat:#c8873a;
+  --f:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--white);color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.47;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance;letter-spacing:-.025em}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+
+/* Barra superior */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(251,251,253,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
+.nav-in{max-width:1000px;margin:0 auto;padding-inline:20px;height:48px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13px}
+.nav-in b{font-weight:600;font-size:14px}
+.nav-in nav{display:flex;gap:22px;align-items:center}
+.nav-in nav a{text-decoration:none;color:var(--ink);opacity:.85}
+.nav-in nav a:hover{opacity:1}
+.nav-in .pill{background:var(--blue);color:#fff;opacity:1;padding:4px 12px;border-radius:99px}
+@media (max-width:560px){.nav-in nav a:not(.pill){display:none}}
+
+/* Secciones */
+.sec{padding-inline:20px;padding-block:clamp(72px,11vw,120px);text-align:center;overflow:hidden}
+.sec.light{background:var(--light)}
+.sec.dark{background:var(--dark);color:var(--ink-inv)}
+.in{max-width:980px;margin:0 auto;display:grid;gap:18px;justify-items:center}
+.eyebrow{font-size:clamp(19px,2.2vw,24px);font-weight:600;color:var(--wheat)}
+.mega{font-size:clamp(44px,8.4vw,96px);line-height:1.04;font-weight:700}
+.h2{font-size:clamp(36px,6vw,64px);line-height:1.06;font-weight:700}
+.sub{font-size:clamp(19px,2.3vw,24px);line-height:1.35;color:var(--ink-soft);max-width:34ch;font-weight:400}
+.dark .sub{color:var(--soft-inv)}
+.ctas{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.btn{background:var(--blue);color:#fff;text-decoration:none;padding:12px 22px;border-radius:99px;font-size:17px;font-weight:400;transition:background .2s}
+.btn:hover{background:#0077ed}
+.more{color:var(--blue);text-decoration:none;font-size:clamp(17px,1.8vw,19px)}
+.dark .more{color:var(--blue-inv)}
+.more:hover{text-decoration:underline}
+.more::after{content:" ›";font-size:1.15em}
+
+/* Celular */
+.stage{margin-top:clamp(36px,6vw,64px);display:flex;justify-content:center;width:100%}
+.phone{width:min(300px,78vw);aspect-ratio:300/620;max-width:100%;background:#1d1d1f;border-radius:52px;padding:12px;box-shadow:0 40px 80px -30px rgba(0,0,0,.45),inset 0 0 0 2px #3a3a3c}
+.screen{position:relative;height:100%;border-radius:40px;overflow:hidden;background:#fffaf3;color:#2b2118;text-align:left;display:flex;flex-direction:column}
+.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:34%;height:24px;border-radius:99px;background:#000;z-index:2}
+.s-hero{height:44%;background:
+  radial-gradient(120% 80% at 80% 10%,#f3c98b 0%,transparent 55%),
+  radial-gradient(90% 70% at 10% 90%,#9b5a22 0%,transparent 60%),
+  linear-gradient(160deg,#e3a65c,#a8642a);position:relative}
+.s-hero::after{content:"";position:absolute;inset:auto 0 0 0;height:50%;background:linear-gradient(transparent,rgba(43,33,24,.55))}
+.s-hero span{position:absolute;left:18px;bottom:16px;z-index:1;color:#fff;font-weight:700;font-size:clamp(20px,6.2vw,26px);line-height:1.05;letter-spacing:-.02em}
+.s-hero small{display:block;font-weight:500;font-size:12px;opacity:.85;letter-spacing:0;margin-bottom:4px}
+.s-body{padding:16px 18px;display:grid;gap:12px;font-size:12.5px;line-height:1.35}
+.s-wa{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;font-weight:600;font-size:14px;border-radius:14px;padding:11px}
+.s-wa svg{width:16px;height:16px;fill:#fff}
+.s-row{display:flex;justify-content:space-between;gap:8px;padding-bottom:9px;border-bottom:1px solid #efe4d4}
+.s-row:last-child{border-bottom:0}
+.s-row b{font-weight:600}
+.s-row span{color:#8a7560}
+
+/* Chat */
+.chat{width:min(380px,100%);margin-top:clamp(32px,5vw,56px);display:grid;gap:10px;text-align:left;font-size:16px}
+.bub{max-width:80%;padding:10px 14px;border-radius:20px;line-height:1.35}
+.bub.me{justify-self:end;background:#0b84ff;color:#fff;border-bottom-right-radius:6px}
+.bub.them{justify-self:start;background:#262628;color:var(--ink-inv);border-bottom-left-radius:6px}
+.bub small{display:block;font-size:11px;opacity:.6;margin-top:2px}
+
+/* Tiles */
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:1000px;margin:clamp(36px,5vw,56px) auto 0;text-align:left}
+.tile{background:var(--white);border-radius:28px;padding:clamp(28px,4vw,44px);display:grid;gap:10px;align-content:start;min-height:230px;min-width:0}
+.tile .k{font-size:clamp(40px,5vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1}
+.tile h3{font-size:22px;font-weight:600;line-height:1.2}
+.tile p{color:var(--ink-soft);font-size:17px;max-width:30ch}
+.tile .k.g{color:#1a9c4f} .tile .k.b{color:var(--blue)} .tile .k.w{color:var(--wheat)}
+@media (max-width:700px){.tiles{grid-template-columns:1fr}.tile{min-height:0}}
+
+/* Planes */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:980px;margin:clamp(40px,6vw,64px) auto 0;width:100%}
+.plan{padding:8px 24px;display:grid;gap:10px;justify-items:center;align-content:start;min-width:0}
+.plan + .plan{border-left:1px solid #d2d2d7}
+.plan h3{font-size:24px;font-weight:600}
+.plan .price{font-size:clamp(34px,4vw,44px);font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1.1}
+.plan .per{font-size:14px;color:var(--ink-soft);margin-top:-6px}
+.plan p{color:var(--ink-soft);font-size:16px;max-width:24ch}
+.plan .tag{font-size:12px;font-weight:600;color:var(--wheat);text-transform:uppercase;letter-spacing:.06em;min-height:1.4em}
+.fine{font-size:14px;color:var(--ink-soft);margin-top:clamp(28px,4vw,40px)}
+@media (max-width:700px){.plans{grid-template-columns:1fr;gap:36px}.plan + .plan{border-left:0;border-top:1px solid #d2d2d7;padding-top:36px}}
+
+/* Pasos */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;max-width:980px;margin:clamp(40px,6vw,64px) auto 0;width:100%}
+.step{display:grid;gap:8px;justify-items:center;min-width:0}
+.step .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:600;background:var(--dark-2);color:var(--ink-inv);font-size:17px}
+.step h3{font-size:19px;font-weight:600}
+.step p{color:var(--ink-soft);font-size:15px;max-width:22ch}
+@media (max-width:700px){.steps{grid-template-columns:1fr 1fr}}
+
+.contact-data{display:grid;gap:4px;font-size:clamp(19px,2.2vw,22px);margin-top:12px}
+.contact-data a{text-decoration:none;color:var(--ink-inv)}
+.contact-data a:hover{color:var(--blue-inv)}
+
+footer{background:var(--light);color:var(--ink-soft);font-size:12px;padding-inline:20px;padding-block:20px 28px}
+footer div{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid #d2d2d7;padding-top:16px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <b>Daniel Hormazábal</b>
+    <nav>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#planes">Planes</a>
+      <a href="#proceso">Proceso</a>
+      <a class="pill" href="https://wa.me/56984169003?text=Hola%20Daniel%2C%20me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener">Cotizar</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 1. Hero -->
+<section class="sec">
+  <div class="in">
+    <p class="eyebrow">Páginas web en Curicó</p>
+    <h1 class="mega">Su negocio.<br>En el bolsillo de todos.</h1>
+    <p class="sub">Una página simple, rápida y hecha a la medida. Para que lo encuentren, le escriban y lleguen.</p>
+    <div class="ctas">
+      <a class="btn" href="https://wa.me/56984169003?text=Hola%20Daniel%2C%20me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener">Pedir cotización</a>
+      <a class="more" href="#planes">Ver planes</a>
+    </div>
+    <div class="stage">
+      <div class="phone" role="img" aria-label="Ejemplo de página web de una panadería vista en un celular">
+        <div class="screen">
+          <div class="island"></div>
+          <div class="s-hero"><span><small>Ejemplo · Curicó</small>Panadería<br>La Espiga</span></div>
+          <div class="s-body">
+            <div class="s-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>Pedir por WhatsApp</div>
+            <div class="s-row"><b>Pan amasado</b><span>$2.400 / kg</span></div>
+            <div class="s-row"><b>Hallulla</b><span>$2.200 / kg</span></div>
+            <div class="s-row"><b>Empanadas de horno</b><span>$1.800</span></div>
+            <div class="s-row"><b>Abierto hoy</b><span>7:00 – 21:00</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. WhatsApp -->
+<section class="sec dark">
+  <div class="in">
+    <h2 class="h2">Un toque.<br>Y ya le están escribiendo.</h2>
+    <p class="sub">Cada página trae un botón que abre WhatsApp con el mensaje listo. Sin formularios, sin esperas.</p>
+    <div class="chat" aria-hidden="true">
+      <div class="bub me">Hola, ¿tienen empanadas para el domingo?<small>Desde la página web</small></div>
+      <div class="bub them">¡Hola! Sí, ¿cuántas le guardo?</div>
+      <div class="bub me">Una docena, paso a las 12 🙌</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Qué incluye -->
+<section class="sec light" id="incluye">
+  <div class="in">
+    <h2 class="h2">Todo lo que su cliente busca.<br>Nada que sobre.</h2>
+  </div>
+  <div class="tiles">
+    <div class="tile"><span class="k g">1 toque</span><h3>Para escribirle</h3><p>Botón de WhatsApp siempre a mano, en todas las secciones.</p></div>
+    <div class="tile"><span class="k b">.cl</span><h3>Dominio propio</h3><p>Su dirección en internet, registrada a nombre de su negocio.</p></div>
+    <div class="tile"><span class="k w">Maps</span><h3>Cómo llegar</h3><p>Dirección con enlace directo a Google Maps y Waze.</p></div>
+    <div class="tile"><span class="k">100%</span><h3>Hecha para el celular</h3><p>Rápida y fácil de leer donde sus clientes realmente la van a ver.</p></div>
+  </div>
+</section>
+
+<!-- 4. Planes -->
+<section class="sec" id="planes">
+  <div class="in">
+    <h2 class="h2">Elija su plan.</h2>
+    <p class="sub">Precio fijo. 50% al empezar y 50% al publicar.</p>
+  </div>
+  <div class="plans">
+    <div class="plan">
+      <span class="tag"></span>
+      <h3>Esencial</h3>
+      <div class="price">$150.000</div>
+      <div class="per">pago único</div>
+      <p>Una página con todo lo esencial y 2 rondas de cambios.</p>
+    </div>
+    <div class="plan">
+      <span class="tag">Más elegido</span>
+      <h3>Completo</h3>
+      <div class="price">$250.000</div>
+      <div class="per">pago único</div>
+      <p>Hasta 5 secciones, catálogo o galería y 3 rondas de cambios.</p>
+    </div>
+    <div class="plan">
+      <span class="tag"></span>
+      <h3>Mantención</h3>
+      <div class="price">$15.000</div>
+      <div class="per">al mes</div>
+      <p>Hosting, respaldo y cambios de precios, fotos u horarios.</p>
+    </div>
+  </div>
+  <p class="fine">¿Solo necesita aparecer en Google Maps? Configuro su ficha por $35.000.</p>
+</section>
+
+<!-- 5. Proceso -->
+<section class="sec light" id="proceso">
+  <div class="in">
+    <h2 class="h2">Lista en una semana.</h2>
+    <p class="sub">Usted habla siempre con quien hace su página.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h3>Conversamos</h3><p>Me pasa fotos, logo y horario.</p></div>
+    <div class="step"><span class="n">2</span><h3>Diseño</h3><p>La ve funcionando en su celular.</p></div>
+    <div class="step"><span class="n">3</span><h3>Ajustes</h3><p>Corregimos hasta que le guste.</p></div>
+    <div class="step"><span class="n">4</span><h3>Publicación</h3><p>En línea, con su dominio.</p></div>
+  </div>
+</section>
+
+<!-- 6. Contacto -->
+<section class="sec dark" id="contacto">
+  <div class="in">
+    <h2 class="h2">Hablemos.</h2>
+    <p class="sub">Le respondo el mismo día. La primera conversación no tiene costo.</p>
+    <div class="ctas">
+      <a class="btn" href="https://wa.me/56984169003?text=Hola%20Daniel%2C%20me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+    <div class="contact-data">
+      <a href="https://wa.me/56984169003" target="_blank" rel="noopener">+56 9 8416 9003</a>
+      <a href="mailto:danielhl.2499@gmail.com">danielhl.2499@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer><div><span>Daniel Hormazábal · Páginas web · Curicó</span><span>La panadería del ejemplo es ficticia.</span></div></footer>
+</body>
+</html>
